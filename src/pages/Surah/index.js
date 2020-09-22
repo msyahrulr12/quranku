@@ -41,7 +41,7 @@ class Surah extends Component {
                 id: id
             })
 
-            axios.get(`http://api.alquran.cloud/v1/surah/${id}`)
+            axios.get(`https://api.alquran.cloud/v1/surah/${id}`)
                 .then(res => {
                     this.setState({
                         ayat: res.data.data.ayahs
