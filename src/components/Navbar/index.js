@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Navbar, Nav, NavDropdown, Form, FormControl, Button } from 'react-bootstrap'
 import { connect } from 'react-redux'
 import { withRouter, Link } from 'react-router-dom'
+import FilterLink from '../atoms/FilterLink'
 const FA = require('react-fontawesome')
 
 class NavbarComp extends Component {
@@ -14,11 +15,20 @@ class NavbarComp extends Component {
         console.log(this.props)
     }
 
+    updateNavSurah = () => {
+        console.log(this.props.updateNavSurah)
+    }
+
+    redirectPage = () => {
+        // alert('yeah')
+        this.props.history.push(`/surah/1`)
+    }
+
     render() {
         return(
             <Navbar bg="success" className="navbar-dark p-3">
                 <Navbar.Brand>
-                    <Link to="/" className="text-decoration-none text-light">
+                    <Link to="/" onClick={this.updateNavSurah.bind(this)} className="text-decoration-none text-light">
                         <b>Qur'anKu</b>
                     </Link>
                 </Navbar.Brand>
@@ -46,4 +56,10 @@ const mapStateToProps = (state) => {
     }
 }
 
-export default connect(mapStateToProps, null)(withRouter(NavbarComp))
+const mapDispatchToProps = (dispatch) => {
+    return {
+        updateNavSurah: () => dispatch({ type: 'UPDATE_SURAH', showNav: false })
+    }
+}
+
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(NavbarComp))

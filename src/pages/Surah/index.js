@@ -17,7 +17,7 @@ class Surah extends Component {
 
     componentDidMount() {
         console.log(this.state)
-        // console.log(this.props.surat_selanjutnya)
+        console.log(this.props.match.params.id)
         const id = this.props.match.params.id
         
         this.setState({
@@ -147,4 +147,4 @@ const mapDispatchToProps = (dispatch) => {
 }
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(withRouter(Surah))
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Surah))
