@@ -32,7 +32,7 @@ class NavbarComp extends Component {
                         <b>Qur'anKu</b>
                     </Link>
                 </Navbar.Brand>
-                { this.props.showNav != false && (
+                { this.props.showNav !== false && (
                     <Nav className="ml-auto text-white">
                         <Nav.Link className="border-right" href={(this.props.prev == 0) ? '/' : '/surah/'+this.props.prev}>
                             <FA name="arrow-left" /> Previous

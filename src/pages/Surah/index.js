@@ -77,7 +77,7 @@ class Surah extends Component {
         
         // save data to localeStorage
         // console.log(typeof this.state.data.length);
-        if(this.state.data != [] && this.state.data.length != 0) {
+        if(this.state.data !== [] && this.state.data.length !== 0) {
             localStorage.setItem(this.state.id, JSON.stringify({
                 data: this.state.data,
                 datas: this.state.datas,
