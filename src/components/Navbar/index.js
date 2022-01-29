@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
-import { Navbar, Nav, NavDropdown, Form, FormControl, Button } from 'react-bootstrap'
+import { Navbar, Nav } from 'react-bootstrap'
 import { connect } from 'react-redux'
 import { withRouter, Link } from 'react-router-dom'
-import FilterLink from '../atoms/FilterLink'
 const FA = require('react-fontawesome')
 
 class NavbarComp extends Component {
