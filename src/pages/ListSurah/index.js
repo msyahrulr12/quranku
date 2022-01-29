@@ -37,7 +37,7 @@ class ListSurah extends Component {
 
     render() {
         if(this.state.surah !== [] || this.state.surah.length !== 0) {
-            if(!localStorage.getItem('listSurah') || JSON.parse(localStorage.getItem('listSurah')).length == 0) {
+            if(!localStorage.getItem('listSurah') || JSON.parse(localStorage.getItem('listSurah')).length === 0) {
                 localStorage.setItem('listSurah', JSON.stringify(this.state.surah))
             }
         }

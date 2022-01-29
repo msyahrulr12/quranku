@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 import './App.css';
-import { BrowserRouter as Router, Route, Switch, withRouter } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import { FooterComp, NavbarComp } from '../components';
 import ListSurah from './ListSurah';
 import Surah from './Surah';

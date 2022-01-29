@@ -34,7 +34,7 @@ class NavbarComp extends Component {
                 </Navbar.Brand>
                 { this.props.showNav !== false && (
                     <Nav className="ml-auto text-white">
-                        <Nav.Link className="border-right" href={(this.props.prev == 0) ? '/' : '/surah/'+this.props.prev}>
+                        <Nav.Link className="border-right" href={(this.props.prev === 0) ? '/' : '/surah/'+this.props.prev}>
                             <FA name="arrow-left" /> Previous
                         </Nav.Link>
                         <Nav.Link href={`/surah/${this.props.next}`}>

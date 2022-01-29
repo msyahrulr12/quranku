@@ -114,7 +114,7 @@ class Surah extends Component {
                                         <Row className="no-gutters">
                                             <Col>
                                                 <div style={{fontSize: '28px'}}>
-                                                {(ayat.text.substr(0, 37) == "بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيم") 
+                                                {(ayat.text.substr(0, 37) === "بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيم") 
                                                     ? ayat.text.substr(38)
                                                     : ayat.text}<br/><br/>
                                                 </div>

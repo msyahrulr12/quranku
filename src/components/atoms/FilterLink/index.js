@@ -7,7 +7,7 @@ const FilterLink = ({ filter, children }) => {
         <NavLink
             exact
             // to={`${filter}`}
-            to={filter == undefined ? '/' : `/surah/${filter}`}
+            to={filter === undefined ? '/' : `/surah/${filter}`}
             activeStyle={{
                 textDecoration: 'none',
                 color: 'black'
