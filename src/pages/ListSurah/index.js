@@ -20,11 +20,9 @@ class ListSurah extends Component {
 
             axios.get('https://equran.id/api/surat')
                 .then((res) => {
-                    console.log(res.data);
                     this.setState({
                         surah: res.data
                     });
-                    console.log(this.state.surah);
                 })
                 .catch((error) => {
                     console.log(error);
@@ -45,7 +43,7 @@ class ListSurah extends Component {
         }
 
         return(
-            <Container className="mt-2">
+            <Container className="mt-4">
                 <h2><strong>Daftar Surah</strong></h2>
                 <hr />
                 {
@@ -53,7 +51,7 @@ class ListSurah extends Component {
                         return(
                             <Fragment key={index}>
                                 <a className="list-surah-link text-decoration-none text-dark" onClick={() => this.handleSurah(data.nomor)}>
-                                    <Card>
+                                    <Card className="my-2">
                                         <Card.Body className="p-3 mt-2">
                                             <Container fluid>
                                                 <Row className="no-gutters">
@@ -86,6 +84,7 @@ class ListSurah extends Component {
                         )
                     })
                 }
+                <hr />
             </Container>
         )
     }

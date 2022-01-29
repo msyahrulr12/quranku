@@ -13,10 +13,11 @@ class NavbarComp extends Component {
 
     componentDidMount() {
         console.log(this.props)
+        console.log(this.props.prev)
     }
 
     updateNavSurah = () => {
-        console.log(this.props.updateNavSurah)
+        this.props.updateNavSurah()
     }
 
     redirectPage = () => {
@@ -28,7 +29,7 @@ class NavbarComp extends Component {
         return(
             <Navbar bg="success" className="navbar-dark p-3">
                 <Navbar.Brand>
-                    <Link to="/" onClick={this.updateNavSurah.bind(this)} className="text-decoration-none text-light">
+                    <Link to="/" onClick={this.props.updateNavSurah.bind(this)} className="text-decoration-none text-light">
                         <b>Qur'anKu</b>
                     </Link>
                 </Navbar.Brand>

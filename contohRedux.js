@@ -18,8 +18,4 @@ const rootReducer = (state = initialState, action) => {
 
 const store = createStore(rootReducer);
 
-console.log(store.getState())
-
 store.dispatch({ type: 'ADD_AGE' })
-
-console.log(store.getState())

@@ -16,8 +16,8 @@ class Surah extends Component {
     }
 
     componentDidMount() {
-        console.log(this.state)
-        console.log(this.props.match.params.id)
+        // console.log(this.state)
+        // console.log(this.props.match.params.id)
         const id = this.props.match.params.id
         
         this.setState({
@@ -26,7 +26,7 @@ class Surah extends Component {
         
         if(localStorage.getItem(id)) {
             const LS = JSON.parse(localStorage.getItem(id));
-            console.log(LS)
+            // console.log(LS)
             this.setState({
                 data: LS.data,
                 datas: LS.datas,
@@ -59,7 +59,7 @@ class Surah extends Component {
                         // surat_selanjutnya: res.data.surat_selanjutnya,
                         // surat_sebelumnya: res.data.surat_sebelumnya
                     })
-                    console.log(res.data.surat_selanjutnya)
+                    // console.log(res.data.surat_selanjutnya)
                 })
                 .catch(error => {
                     console.log(error)
@@ -72,7 +72,7 @@ class Surah extends Component {
     }
 
     render() {
-        console.log(this.props.updateSurah(this.state.id))
+        this.props.updateSurah(this.state.id)
         // console.log(this.props.surat_selanjutnya)
         
         // save data to localeStorage
@@ -88,11 +88,13 @@ class Surah extends Component {
         return(
             <Fragment>
                 <Container className="mt-3">
-                    <div className="bg-light text-center">
+                    <div className="bg-light text-center py-4">
+                        <h6 className="mb-3">{this.state.data.nomor}. {this.state.data.nama_latin}</h6>
                         <h3>{this.state.data.nama}</h3>
-                        <h6>{this.state.data.arti}</h6>
-                        <Button size="sm" variant="success">{this.state.data.tempat_turun}</Button><br/>
-                        <strong>Jumlah ayat: {this.state.data.jumlah_ayat}</strong>
+                        <h6><b>({this.state.data.arti})</b></h6>
+                        <Button size="sm" variant="success" className="mb-2 mt-2">{this.state.data.tempat_turun}</Button><br/>
+                        <span>Surah Ke: <b>{this.state.data.nomor}</b></span><br />
+                        <span>Jumlah ayat: <b>{this.state.data.jumlah_ayat}</b></span>
                     </div>
                         <hr />
                     <p className="text-justify">
@@ -111,9 +113,11 @@ class Surah extends Component {
                                     <Container className="text-right mt-5" fluid>
                                         <Row className="no-gutters">
                                             <Col>
+                                                <div style={{fontSize: '28px'}}>
                                                 {(ayat.text.substr(0, 37) == "بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيم") 
                                                     ? ayat.text.substr(38)
                                                     : ayat.text}<br/><br/>
+                                                </div>
                                                 <span className="text-left">
                                                     {this.state.datas[index].idn}
                                                 </span>
