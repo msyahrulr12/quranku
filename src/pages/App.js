@@ -6,9 +6,6 @@ import ListSurah from './ListSurah';
 import Surah from './Surah';
 
 function App() {
-
-  
-
   return (
     <Fragment>
       <Router>

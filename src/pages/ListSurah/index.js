@@ -50,7 +50,7 @@ class ListSurah extends Component {
                     this.state.surah.map((data, index) => {
                         return(
                             <Fragment key={index}>
-                                <a className="list-surah-link text-decoration-none text-dark" onClick={() => this.handleSurah(data.nomor)}>
+                                <div className="list-surah-link text-decoration-none text-dark" onClick={() => this.handleSurah(data.nomor)}>
                                     <Card className="my-2">
                                         <Card.Body className="p-3 mt-2">
                                             <Container fluid>
@@ -78,7 +78,7 @@ class ListSurah extends Component {
                                             </Container>
                                         </Card.Body>
                                     </Card>
-                                </a>
+                                </div>
                             </Fragment>
                             
                         )
