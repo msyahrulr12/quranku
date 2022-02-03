@@ -4,11 +4,13 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import { FooterComp, NavbarComp } from '../components';
 import ListSurah from './ListSurah';
 import Surah from './Surah';
+import { createBrowserHistory } from 'history';
 
+const history = createBrowserHistory();
 function App() {
   return (
     <Fragment>
-      <Router>
+      <Router history={history} forceRefresh={true}>
         <NavbarComp />
         <Switch>
           <Route exact path="/">

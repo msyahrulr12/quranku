@@ -1,9 +1,11 @@
 import React, { Component } from 'react'
 import { Navbar, Nav } from 'react-bootstrap'
+import { createBrowserHistory } from 'history'
 import { connect } from 'react-redux'
 import { withRouter, Link } from 'react-router-dom'
 const FA = require('react-fontawesome')
 
+const history = createBrowserHistory()
 class NavbarComp extends Component {
     state = {
         next: '',
@@ -24,6 +26,16 @@ class NavbarComp extends Component {
         this.props.history.push(`/surah/1`)
     }
 
+    nextSurah = () => {
+        // history.
+        history.push(`/surah/${this.props.next}`)
+        // this.props.history.push(`/surah/${this.props.next}`)
+    }
+
+    prevSurah = () => {
+        this.props.history.push(`/surah/${this.props.prev}`)
+    }
+
     render() {
         return(
             <Navbar bg="success" className="navbar-dark p-3">
@@ -37,9 +49,12 @@ class NavbarComp extends Component {
                         <Nav.Link className="border-right" href={(this.props.prev === 0) ? '/' : '/surah/'+this.props.prev}>
                             <FA name="arrow-left" /> Previous
                         </Nav.Link>
-                        <Nav.Link href={`/surah/${this.props.next}`}>
+                        <Navbar.Text style={{ cursor: 'pointer' }} className="mx-2" onClick={this.nextSurah}>
                             Next <FA name="arrow-right" />
-                        </Nav.Link>
+                        </Navbar.Text>
+                        {/* <Nav.Link href={`/surah/${this.props.next}`}>
+                            Next <FA name="arrow-right" />
+                        </Nav.Link> */}
                     </Nav>
                 ) }
             </Navbar>
